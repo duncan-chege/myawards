@@ -1,5 +1,6 @@
-{% extends 'ubase.html' %}
+{% extends 'users/ubase.html' %}
 {% block content %}
+{% load static %}
 
 <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
@@ -11,14 +12,14 @@
                     {% csrf_token %}
                     <fieldset class="form-group form">
                         <legend class="border-bottom mb-4"><p class="smalltxt"> Sign up and check out Kenya's star portfolio websites</p></legend>
-                        {{form|crispy }}
+                        {{form}}
                     </fieldset>
                     <div class="form-group form">
-                        <button class="btn btn-success" type="submit">Sign Up</button>
+                        <button class="btn btn-outline-success" type="submit">Sign Up</button>
                     </div>
                 </form>
                 <div class="border-top pt-3 below">
-                    <small class="text-muted">Have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a> </small>
+                    <small class="text-muted">Have an account? <a class="ml-2" href="#">Sign In</a> </small>
                 </div>
             </div>
         </div>

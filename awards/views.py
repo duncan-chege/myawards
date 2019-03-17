@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from .models import Project
 
 # Create your views here.
 def register(request):
@@ -22,7 +23,7 @@ def profile(request):
 @login_required
 def feed(request):
     projects = Project.objects.all().order_by('-id')
-    print projects
+    print (projects)
 
     return render(request, 'feed.html',{"projects": projects})
 

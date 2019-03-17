@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth import views
 
 urlpatterns=[
-    url('^$',views.register, name='register'),
-    url(r'^login',views.LoginView, name='login'),
+    url('^$',views.LoginView, name='login'),
+    url(r'^register',views.register, name='register'),
+    url(r'^profile',views.profile, name='profile') 
 ]

@@ -18,3 +18,11 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+
+@login_required
+def feed(request):
+    projects = Project.objects.all().order_by('-id')
+    print projects
+
+    return render(request, 'feed.html',{"projects": projects})
+

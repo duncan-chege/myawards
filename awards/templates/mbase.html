@@ -1,0 +1,47 @@
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/mbase.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Pongezzi</title>
+
+    {% block styles %}
+    {% bootstrap_css %}
+    {% endblock %}
+
+</head>
+
+<body>
+<!--   
+<nav class="navbar">
+    <section class="logo-section"><a href="{% url 'home' %}"><img class="logo" src="/static/images/logo.png"/></a>
+      <div></div><p class="logoname">MyGram</p>
+    </section>
+    <form class="search-section" role="search" action="{% url 'search_results' %}">
+      <input class="input-search" type="search" name="search" placeholder="Search a user"/>
+    </form>
+    <section class="icons-section"><a href="{% url 'profile' user.id %}">Profile</a></section>
+    <section class="icons-section2"><a href="{% url 'login' %}">Logout</a></section>
+  </nav> -->
+
+    {% block content %}
+
+    {%endblock%}
+
+    {% block scripts %}
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}
+
+</body>
+
+</html>

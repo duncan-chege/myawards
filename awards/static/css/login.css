@@ -1,0 +1,32 @@
+.pongezzi {
+    width: 22em;
+    margin-top: 10%;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        margin-left: -120px;
+    }
+}
+
+.vl {
+    border-left: 6px solid rgb(88, 86, 86);
+    height: 50px;
+    margin-top: -70px;
+    margin-bottom: 30px;
+  }
+
+.imgtxt{
+    margin-left: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px){
+.col-md-6 {
+    margin-left: 150px;
+    margin-top: 5%;
+    max-width: 45%;
+}
+}

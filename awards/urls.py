@@ -7,7 +7,8 @@ from django.conf.urls.static import static
 urlpatterns=[
     url(r'^$',auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     url(r'^register',views.register, name='register'),
-    url(r'^profile',views.profile, name='profile') 
+    url(r'^profile',views.profile, name='profile'),
+    url(r'^feed',views.feed, name='feed')
 ]
 
 if settings.DEBUG:

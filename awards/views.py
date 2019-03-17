@@ -27,3 +27,11 @@ def feed(request):
 
     return render(request, 'feed.html',{"projects": projects})
 
+def review(request,id):
+    user=User.objects.get(id=id)
+    projects = Project.objects.all().filter(owner_id=user.id)
+    return render(request, 'review.html',{'projects':projects,"user":user})
+
+
+
+

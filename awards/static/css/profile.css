@@ -1,0 +1,28 @@
+.image {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.image img {
+    height: 100%;
+}
+
+.bio {
+    margin-left: -20px;
+}
+
+/* .prof {
+    display: inline-block;
+    margin-left: 40%;
+} */
+.p_title{
+    position: absolute;
+    display: inline-block;
+    margin-top: 50px;
+}
+.main_prof{
+    margin-top: 30px;
+    margin-left: 50%;
+}

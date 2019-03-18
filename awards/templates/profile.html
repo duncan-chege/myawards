@@ -1,4 +1,4 @@
-<!-- {% extends 'mbase.html' %}
+{% extends 'mbase.html' %}
 {% block content %}
 {% load static %}
 
@@ -6,13 +6,29 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <img class="rounded-circle account-img" src='{{profiles.profile_image.url}}'>
-            <h2 class="account-heading">{{profiles.user.username}}</h2>
-            <p class="text-secondary">{{profiles.email}}</p>
-            <p class="text-dark">{{profiles.bio}}</p>
+
+        <div class="col-md-10">
+                <h1 class = "p_title"> Profile </h1>
+            {% for pro in profiles %}
+            <div class="main_prof">
+            <div class="image">
+                <img src='{{pro.profile_image.url}}' alt="{{pro.user.username}}'s profile pic">
+            </div>
+            <h4><b>{{pro.user.username}}</b></h4>
+            <p class="text-secondary">{{pro.email}}</p>
+            <p class="text-dark bio">{{pro.bio}}</p>
+            </div>
+            {% endfor %}
+
         </div>
     </div>
 </div>
+<hr>
 
-{% endfor %} -->
+<div class="container">
+        <div class="row">
+    
+            <div class="col-md-10">
+                    <h1 class = "p_title"> Projects </h1>
+
+{% endblock %}

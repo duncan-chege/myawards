@@ -1,0 +1,1 @@
+web: gunicorn pongezi.wsgi --log-file -

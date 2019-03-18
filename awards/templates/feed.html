@@ -30,7 +30,7 @@
                     <span class="card-title grey-text text-darken-4">{{p.title}}<i class="material-icons right">close</i></span>
                     <p>{{p.description}}</p>
                     <p><a href="{{p.website_link}}" target="_blank">View Site</a></p>
-                    <p class="owner"> BY <b>{{p.owner}}</b> </p>
+                    <p class="owner"> BY <a href="{% url 'profile' p.owner.id  %}"> <b>{{p.owner}}</b></a></p>
                 </div>
 
             </div>

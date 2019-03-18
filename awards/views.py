@@ -30,7 +30,7 @@ def review(request,id):
 
 def profile(request,id):
     user = User.objects.get(id=id)
-    profiles = Profile.objects.all()
+    profiles = Profile.objects.all().filter(user_id=user.id)
     return render(request, 'profile.html',{'profiles':profiles, 'user':user})
 
 

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from .models import Project
+from django.contrib.auth.models import User[]
 
 # Create your views here.
 def register(request):
@@ -27,10 +28,17 @@ def feed(request):
 
     return render(request, 'feed.html',{"projects": projects})
 
+@login_required
+def profile(request,id):
+    user = User.objecs.get(id=id)
+    profiles = Profile.objects.all().filter(user_id=user.id)
+    return render(request, 'profile.html',{'profiles':profiles, 'user':user})
+
 def review(request,id):
     # projects = Project.objects.all().filter(owner_id=user.id)
     projo = Project.objects.get(id=id)
     return render(request, 'review.html',{'projo':projo})
+
 
 
 

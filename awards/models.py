@@ -14,7 +14,7 @@ class Project(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)    #one user has one profile
     bio= models.CharField(max_length =100)
-    # image= models.ImageField(default='default.jpeg', upload_to='profile_pics')
+    profile_image= models.ImageField(default='default.jpeg')
     email= models.CharField(max_length =50)
 
     def __str__(self):

@@ -3,3 +3,30 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/review.css' %}">
+
+<style>
+.test-image {
+    width: 100%;
+    height: 40vh;
+    background-image: url("{{projo.image_path.url}}");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+<div class="test-image">
+        <div class="centered">
+            <p id="txt"><b>{{projo.title}}</b></p>
+        </div>
+        <div class="image-overlay">
+        </div>
+    </div>
+
+    <a href="{{projo.website_link}}" target="_blank"><button class="button button1">View Site</button></a>
+    <p class="prt"> <b>Participate by:</b> <span class="rate">Rating</span> and <span class="rate">Reviewing</span> </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+{% endblock %}

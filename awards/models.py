@@ -12,12 +12,12 @@ class Project(models.Model):
         return self.title
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)    #one winner (user) has one profile
+    user = models.OneToOneField(User, on_delete=models.CASCADE)    #one user has one profile
     bio= models.CharField(max_length =100)
-    project= models.ForeignKey(Project)
+    # image= models.ImageField(default='default.jpeg', upload_to='profile_pics')
     email= models.CharField(max_length =50)
 
     def __str__(self):
-        return f'{self.user.username}'
+        return f"{self.user.username}'s Profile"
 
     

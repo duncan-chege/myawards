@@ -3,20 +3,17 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/feed.css' %}">
-<div class="container">
-    <div class="row">
 
-        <div class="col-md-12">
-            <div class="test-image">
-                <div class="centered">
-                    <p id="txt"><b> Awarding the best locally made websites </b></p>
-                </div>
-                <div class="image-overlay">
-                </div>
-            </div>
-        </div>
+<div class="test-image">
+    <div class="centered">
+        <p id="txt"><b> Awarding the best locally made websites </b></p>
     </div>
+    <div class="image-overlay">
+    </div>
+</div>
 
+<div class="container">
+  
     <div class="row">
         <div class="col-md-12">
             <h4 class="featured"> <b>Featured Sites</b> </h4>
@@ -27,7 +24,7 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{p.title}}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Review site</a></p>
+                    <p><a href="{% url 'review' p.owner.id %}">Review site</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{p.title}}<i class="material-icons right">close</i></span>

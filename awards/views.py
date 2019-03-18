@@ -30,7 +30,7 @@ def feed(request):
 def review(request,id):
     user=User.objects.get(id=id)
     projects = Project.objects.all().filter(owner_id=user.id)
-    return render(request, 'review.html',{'projects':projects,"user":user})
+    return render(request, 'review.html',{'projects':projects,'user':user})
 
 
 

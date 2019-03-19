@@ -13,7 +13,7 @@ class Project(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)    #one user has one profile
-    bio= models.CharField(max_length =100)
+    bio= models.CharField(max_length =100, default="Digital eye candy")
     myproject = models.ForeignKey(Project)
     profile_image= models.ImageField(default='default.jpeg')
     email= models.CharField(max_length =50)

@@ -13,12 +13,6 @@
     margin-top: 10%;
 }
 
-@media (min-width: 768px) {
-    .col-md-4 {
-        margin-left: -120px;
-    }
-}
-
 .vl {
     border-left: 6px solid rgb(88, 86, 86);
     height: 50px;
@@ -33,10 +27,3 @@
     font-weight: bold;
 }
 
-@media (min-width: 768px) {
-    .col-md-6 {
-        margin-left: 150px;
-        margin-top: 5%;
-        max-width: 45%;
-    }
-}

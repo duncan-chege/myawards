@@ -8,17 +8,19 @@
     <div class="row">
 
         <div class="col-md-10">
-                <h1 class = "p_title"> Profile </h1>
-            {% for pro in profiles %}
+            <h1 class="p_title"> Profile </h1>
             <div class="main_prof">
-            <div class="image">
-                <img src='{{pro.profile_image.url}}' alt="{{pro.user.username}}'s profile pic">
+                <div class="image">
+                    {% for profile in profiles %}
+                    <img src='{{profile.profile_image.url}}' alt="{{profile.user.username}}'s profile pic">
+                    
+                </div>
+                <h4><b>{{user.username}}</b></h4>
+                <p class="text-secondary">{{user.email}}</p>
+                <p class="text-dark bio">{{profile.bio}}</p>
+                {% endfor %}
+                
             </div>
-            <h4><b>{{pro.user.username}}</b></h4>
-            <p class="text-secondary">{{pro.email}}</p>
-            <p class="text-dark bio">{{pro.bio}}</p>
-            </div>
-            {% endfor %}
 
         </div>
     </div>
@@ -26,9 +28,9 @@
 <hr>
 
 <div class="container">
-        <div class="row">
-    
-            <div class="col-md-10">
-                    <h1 class = "p_title"> Projects </h1>
+    <div class="row">
 
-{% endblock %}
+        <div class="col-md-10">
+            <h1 class="p_title"> Projects </h1>
+
+            {% endblock %}

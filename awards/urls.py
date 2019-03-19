@@ -9,7 +9,8 @@ urlpatterns=[
     url(r'^register',views.register, name='register'),
     url(r'^feed',views.feed, name='feed'),
     url(r'^review/(\d+)', views.review, name = 'review'),
-    url(r'^profile/(\d+)',views.profile, name='profile')
+    url(r'^profile/(\d+)',views.profile, name='profile'),
+    url(r'^post/', views.post, name='post')
 ]
 
 if settings.DEBUG:

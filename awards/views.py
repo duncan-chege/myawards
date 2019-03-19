@@ -31,7 +31,23 @@ def review(request,id):
 def profile(request,id):
     user = User.objects.get(id=id)
     profiles = Profile.objects.all()
+    projects = Profile.objects.all().filter(owner_id=user.id)
     return render(request, 'profile.html',{'profiles':profiles, 'user':user})
+
+def post(request):
+    user = request.user
+    if request.method == 'POST':
+        projform = ProjectPostForm(request.POST, request.FILES)
+        if projform.is_valid():
+            proj = projform.save(commit=False)
+            proj.owner = user
+            proj.save()
+        return redirect('profile', user.id)
+    else:
+        projform = ProjectPostForm()
+    return render(request, 'newproj.html', {'projform': projform})
+
+
 
 
 

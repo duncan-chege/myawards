@@ -9,8 +9,10 @@
     height: 100%;
 }
 
-.bio {
+.btn {
+    margin-top: 120px;
 }
+
 .p_title{
     position: absolute;
     display: inline-block;

@@ -23,9 +23,9 @@
 <body>
 
 
-    <nav class="navbar grey darken-4">
+    <nav class="navbar blue-grey">
         <a href="{% url 'feed' %}">
-            <p class="logoname">Pongezzi</p>
+            <img src='/static/images/pongezzi.png' class="pongezzi" alt="picture">
         </a>
         </section>
 
@@ -36,7 +36,7 @@
         </form>
 
         <section class="icons-section"><a href="{% url 'profile' user.id %}">Profile</a></section>
-        <section class="icons-section2"><a href="{% url 'login' %}">Logout</a></section>
+        <section class="icons-section"><a href="{% url 'login' %}">Logout</a></section>
     </nav>
 
     {% block content %}

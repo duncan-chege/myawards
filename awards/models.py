@@ -9,7 +9,7 @@ class Project(models.Model):
     website_link= models.CharField(max_length =100)
     
     @classmethod
-    def get_by_title(cls,title):
+    def search_by_title(cls,title):
         searched= cls.objects.filter(title__icontains=title)
         return searched
 

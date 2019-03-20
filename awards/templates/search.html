@@ -1,0 +1,27 @@
+{% extends 'mbase.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        {% if projects %}
+        <h4> Found {{projects|length}} of {{message}} </h4>
+        {% else %}
+        <h4> You have no {{message}} project</h4>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        {% if projects %}
+        {% for p in projects %}
+
+        <div class="col-sm-6">
+            <h4>{{p.title}}</h4>
+
+            {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+    {% endblock %}

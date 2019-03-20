@@ -63,3 +63,5 @@ def review(request,id):
 
     print(reviews)
     return render(request, 'review.html',{'projo':projo, 'auser': auser, 'reviewform':reviewform, 'reviews':reviews})
+
+

@@ -7,6 +7,11 @@ class Project(models.Model):
     image_path = models.ImageField(upload_to='project_images/')
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     website_link= models.CharField(max_length =100)
+    
+    @classmethod
+    def get_by_title(cls,title):
+        searched= cls.objects.filter(title__icontains=title)
+        return searched
 
     def __str__(self):
         return self.title

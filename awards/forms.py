@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Project
+from .models import *
 
+INTEGER_CHOICES= [tuple([x,x]) for x in range(1,6)]
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -15,3 +16,14 @@ class ProjectPostForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['title','description','image_path','website_link']
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        exclude = ['username','project']
+        widgets = {
+            'design': forms.Select(choices=INTEGER_CHOICES),
+            'usability': forms.Select(choices=INTEGER_CHOICES),
+            'content': forms.Select(choices=INTEGER_CHOICES),
+            'review': forms.TextInput(attrs={'placeholder':'Add a review'})
+        }

@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    url(r'^$',auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    url(r'^login',auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     url(r'^register',views.register, name='register'),
     url(r'^feed',views.feed, name='feed'),
     url(r'^review/(\d+)', views.review, name = 'review'),

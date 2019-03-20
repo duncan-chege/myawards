@@ -21,8 +21,11 @@
 </head>
 
 <body>
-<!--   
-<nav class="navbar"> -->
+    <ul class="nav">
+        <li><a href="{% url 'feed' %}">Home</a></li>
+        <li style="float:right"><a href="{% url 'login' %}">Logout</a></li>
+        <li style="float:right"><a class="active" href="{% url 'profile' user.id %}">Profile</a></li>
+    </ul>
 
     {% block content %}
 

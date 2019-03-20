@@ -24,15 +24,11 @@ def feed(request):
 
     return render(request, 'feed.html',{"projects": projects})
 
-def review(request,id):
-    projo = Project.objects.get(id=id)
-    return render(request, 'review.html',{'projo':projo})
-
 def profile(request,id):
     user = User.objects.get(id=id)
     profiles = Profile.objects.all()
-    projects = Profile.objects.all().filter(owner_id=user.id)
-    return render(request, 'profile.html',{'profiles':profiles, 'user':user})
+    projects = Project.objects.all().filter(owner_id=user.id)
+    return render(request, 'profile.html',{'profiles':profiles, 'user':user, 'projects':projects})
 
 def post(request):
     user = request.user
@@ -46,6 +42,11 @@ def post(request):
     else:
         projform = ProjectPostForm()
     return render(request, 'newproj.html', {'projform': projform})
+
+def review(request,id):
+    projo = Project.objects.get(id=id)
+    auser = User.objects.all()
+    return render(request, 'review.html',{'projo':projo, 'auser': auser})
 
 
 

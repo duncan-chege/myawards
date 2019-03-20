@@ -21,4 +21,10 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Profile"
 
+class Criteria(models.Model):
+    design = models.ManyToManyField(User, related_name='design', blank=True)
+    usability = models.ManyToManyField(User, related_name='usability', blank=True)
+    content = models.ManyToManyField(User, related_name='content', blank=True)
+
+
     

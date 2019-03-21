@@ -34,3 +34,9 @@ class Review(models.Model):
     review = models.TextField(max_length=100,null=True)
     project = models.ForeignKey(Project)
     
+class UserProfile(models.Model):
+    username= models.ForeignKey(User)
+    bio = models.ForeignKey(Profile)
+    title = models.ForeignKey(Project)
+    profile_image = models.ForeignKey(Profile)
+

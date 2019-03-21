@@ -22,7 +22,7 @@
   }
   .centered {
     position: absolute;
-    top: 5em;
+    top: 9em;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

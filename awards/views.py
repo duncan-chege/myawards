@@ -4,6 +4,9 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from .models import *
 from django.contrib.auth.models import User
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer, ProfileSerializer
 
 # Create your views here.
 def register(request):
@@ -71,6 +74,17 @@ def search_results(request):
         message = f'{title}'
 
         return render(request, 'search.html',{'message':message, 'projects':searched_projects})
-        
+
+class ProjectList(APIView):
+    def get(self,request,format=None):
+        all_projects = Project.objects.all()
+        project_serializers = ProjectSerializer(all_projects, many=True)
+        return Response(project_serializers.data)  
+
+class ProfileList(APIView):
+    def get(self,request,format=None):
+        all_profiles = Profile.objects.all()
+        profile_serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(profile_serializers.data)  
 
 

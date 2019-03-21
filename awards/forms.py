@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
-INTEGER_CHOICES= [tuple([x,x]) for x in range(1,6)]
+INTEGER_CHOICES= [tuple([x,x]) for x in range(1,11)]
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()

@@ -22,6 +22,7 @@ Written by *Duncan Chege*. Mastering django
 | `View posted projects and their details` | None |  Shows users' website projects with details
 | `Post a project to be rated/reviewed` | Post project details |  Complete project with ready details
 | `View my profile page` | None |  View profile details alngside specific projects done
+| `Search a project` | Supposed project name |  Project of that name and image
 
 
 ### Contact Information

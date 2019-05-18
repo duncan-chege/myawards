@@ -1,4 +1,8 @@
 
+  nav{
+    background-color: #d29434 !important;;
+  }
+  
   .navbar .logoname {
     width: 130px;
     margin-bottom: -1px;
@@ -7,15 +11,17 @@
   }
  
  .search-section{
-     margin-bottom: 20px;
+     margin-bottom: 70px;
  }
 
  .pongezzi{
    width:130px;
    height:100px;
+   margin-top: -60px;
  }
  .icons-section{
    font-size: 17px;
+   margin-bottom: 50px;
  }
  .icons-section a:hover{
   color: black;
